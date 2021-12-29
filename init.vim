@@ -98,6 +98,8 @@ source ~/AppData/Local/nvim/plugins/nerdtree.vim
 source ~/AppData/Local/nvim/plugins/floaterm.vim
 source ~/AppData/Local/nvim/plugins/airline.vim
 source ~/AppData/Local/nvim/plugins/vim-signature.vim
+source ~/AppData/Local/nvim/plugins/telescope.vim
+source ~/AppData/Local/nvim/plugins/neogit.vim
 
 if exists('g:vscode')
 	source ~/AppData/Local/nvim/plugins/easymotionvscode.vim
