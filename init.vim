@@ -25,6 +25,7 @@ set wildmenu
 set nu
 set clipboard=unnamed
 set nowrap
+set autochdir
 
 " store backup, undo, and swap files in temp directory
 set backup
@@ -62,6 +63,12 @@ inoremap  u
 " Swap line and char mark lookups
 :nnoremap ' `
 :nnoremap ` '
+
+" window navigation
+nnoremap <silent> <C-j> <C-w>j<CR>
+nnoremap <silent> <C-k> <C-w>k<CR>
+nnoremap <silent> <C-h> <C-w>h<CR>
+nnoremap <silent> <C-l> <C-w>l<CR>
 
 " nav buffers
 nmap gj :bnext<CR>
