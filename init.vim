@@ -25,7 +25,7 @@ set wildmenu
 set nu
 set clipboard=unnamed
 set nowrap
-set autochdir
+"set autochdir
 
 " store backup, undo, and swap files in temp directory
 set backup
@@ -76,6 +76,10 @@ nmap gk :bprev<CR>
 
 noremap <leader>s v$hc
 
+" set the current directory or copy it to the clipboard
+nnoremap <M-z> :cd %:p:h<CR>
+nnoremap <M-x> :let @+=expand('%:p:h')<CR>:cd <C-r>+
+
 inoremap <silent>  <S-Insert>  <C-R>+
 
 nmap <esc><esc> <cmd>nohlsearch<cr>
@@ -105,8 +109,9 @@ source ~/AppData/Local/nvim/plugins/nerdtree.vim
 source ~/AppData/Local/nvim/plugins/floaterm.vim
 source ~/AppData/Local/nvim/plugins/airline.vim
 source ~/AppData/Local/nvim/plugins/vim-signature.vim
-source ~/AppData/Local/nvim/plugins/telescope.vim
+"source ~/AppData/Local/nvim/plugins/telescope.vim
 source ~/AppData/Local/nvim/plugins/neogit.vim
+source ~/AppData/Local/nvim/plugins/fzf.vim
 
 if exists('g:vscode')
 	source ~/AppData/Local/nvim/plugins/easymotionvscode.vim
