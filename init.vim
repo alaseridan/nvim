@@ -109,6 +109,7 @@ source ~/AppData/Local/nvim/plugins/vim-signature.vim
 source ~/AppData/Local/nvim/plugins/neogit.vim
 source ~/AppData/Local/nvim/plugins/fzf.vim
 source ~/AppData/Local/nvim/plugins/treesitter.vim
+source ~/AppData/Local/nvim/plugins/markdown.vim
 
 if exists('g:vscode')
 	source ~/AppData/Local/nvim/plugins/easymotionvscode.vim

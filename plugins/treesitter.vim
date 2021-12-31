@@ -5,6 +5,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
+set foldlevelstart=99 "do not fold everything on start
 
 function TreeSitterSetup()
 lua <<EOF
