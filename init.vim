@@ -87,6 +87,10 @@ inoremap <silent>  <S-Insert>  <C-R>+
 
 nmap <esc><esc> <cmd>nohlsearch<cr>
 
+" keep last yank in register after a yank
+"xnoremap p pgv"@=v:register.'y'<cr>
+xnoremap p pgvy
+
 " vscode custom keys
 if exists('g:vscode')
 	source ~/AppData/Local/nvim/vscodekeys.vim
