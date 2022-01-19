@@ -36,6 +36,9 @@ set directory=C:\WINDOWS\Temp
 set undodir=C:\WINDOWS\Temp
 set writebackup
 
+set spell spelllang=en_us
+" in insert mode fix misspelled word with <C-x> s
+
 
 "--------------------------------------------------------------------------
 " Key maps
@@ -68,14 +71,15 @@ inoremap  u
 :nnoremap ` '
 
 " window navigation
-nnoremap <silent> <C-j> <C-w>j<CR>
-nnoremap <silent> <C-k> <C-w>k<CR>
-nnoremap <silent> <C-h> <C-w>h<CR>
-nnoremap <silent> <C-l> <C-w>l<CR>
+nnoremap <silent> <C-j> <C-w>j
+nnoremap <silent> <C-k> <C-w>k
+nnoremap <silent> <C-h> <C-w>h
+nnoremap <silent> <C-l> <C-w>l
 
 " nav buffers
 nmap gj :bnext<CR>
 nmap gk :bprev<CR>
+nmap <leader>bd :b# <Bar> :bd#<CR>
 
 noremap <leader>s v$hc
 
@@ -115,10 +119,11 @@ source ~/AppData/Local/nvim/plugins/fzf.vim
 source ~/AppData/Local/nvim/plugins/treesitter.vim
 source ~/AppData/Local/nvim/plugins/markdown.vim
 
+source ~/AppData/Local/nvim/plugins/omnisharp.vim
+
 if exists('g:vscode')
 	source ~/AppData/Local/nvim/plugins/easymotionvscode.vim
 else
-	source ~/AppData/Local/nvim/plugins/omnisharp.vim
 	source ~/AppData/Local/nvim/plugins/easymotion.vim
 	source ~/AppData/Local/nvim/plugins/which-key.vim
 endif
