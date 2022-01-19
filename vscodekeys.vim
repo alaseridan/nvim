@@ -30,6 +30,16 @@ function! s:openWhichKeyInVisualMode()
     endif
 endfunction
 
+function! s:ToggleComment()
+    normal! gv
+	
+    let selection = [getpos("'<"), getpos("'>")]
+    let endLine = selection[1][1]
+    let startLine = selection[0][1]
+	
+    call VSCodeNotifyRange("editor.action.commentLine", startLine, endLine, 0)
+endfunction
+
 
 nnoremap <silent> <C-j> :call VSCodeNotify('workbench.action.navigateDown')<CR>
 xnoremap <silent> <C-j> :call VSCodeNotify('workbench.action.navigateDown')<CR>
@@ -46,3 +56,9 @@ nnoremap <silent> ; :call VSCodeNotify('whichkey.show')<CR>
 xnoremap <silent> ; :<C-u>call <SID>openWhichKeyInVisualMode()<CR>
 
 xnoremap <silent> <C-P> :<C-u>call <SID>openVSCodeCommandsInVisualMode()<CR>
+
+nnoremap gc :call VSCodeNotify('editor.action.commentLine')<cr>
+nnoremap gC :call VSCodeNotify('editor.action.blockComment')<cr>
+"vnoremap gc :call VSCodeNotify('editor.action.commentLine')<cr>
+vnoremap gc :<C-u>call <SID>ToggleComment()<cr>
+vnoremap gC :call VSCodeNotify('editor.action.blockComment')<cr>
