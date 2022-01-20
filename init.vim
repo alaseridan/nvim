@@ -95,6 +95,8 @@ nmap <esc><esc> <cmd>nohlsearch<cr>
 "xnoremap p pgv"@=v:register.'y'<cr>
 xnoremap p pgvy
 
+nmap <leader>l ::CocCommand eslint.executeAutofix<cr>
+
 " vscode custom keys
 if exists('g:vscode')
 	source ~/AppData/Local/nvim/vscodekeys.vim
@@ -121,6 +123,8 @@ source ~/AppData/Local/nvim/plugins/markdown.vim
 source ~/AppData/Local/nvim/plugins/autsession.vim
 
 source ~/AppData/Local/nvim/plugins/omnisharp.vim
+source ~/AppData/Local/nvim/plugins/coc.vim
+source ~/AppData/Local/nvim/plugins/auto-pairs.vim
 
 if exists('g:vscode')
 	source ~/AppData/Local/nvim/plugins/easymotionvscode.vim
