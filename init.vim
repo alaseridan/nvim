@@ -27,6 +27,8 @@ set clipboard=unnamed
 set nowrap
 set splitright
 "set autochdir
+set termguicolors
+set encoding=UTF-8
 
 " store backup, undo, and swap files in temp directory
 set backup
@@ -75,6 +77,14 @@ nnoremap <silent> <C-j> <C-w>j
 nnoremap <silent> <C-k> <C-w>k
 nnoremap <silent> <C-h> <C-w>h
 nnoremap <silent> <C-l> <C-w>l
+" Maps Alt-[h,j,k,l] to resizing a window split
+map <silent> <A-h> <C-w>>
+map <silent> <A-j> <C-W>+
+map <silent> <A-k> <C-W>-
+map <silent> <A-l> <C-w><
+" Maps Alt-[s.v] to horizontal and vertical split respectively
+map <silent> <A-s> :split<CR>
+map <silent> <A-v> :vsplit<CR>
 
 " nav buffers
 nmap gj :bnext<CR>
@@ -107,24 +117,31 @@ endif
 "--------------------------------------------------------------------------
 call plug#begin('~/AppData/Local/nvim/plugged')
 
+
+"THEMES
 "source ~/AppData/Local/nvim/plugins/dracula.vim
 "source ~/AppData/Local/nvim/plugins/codedark.vim
 source ~/AppData/Local/nvim/plugins/nordtheme.vim
 source ~/AppData/Local/nvim/plugins/onedark.vim
-"source ~/AppData/Local/nvim/plugins/nerdtree.vim
-source ~/AppData/Local/nvim/plugins/fern.vim
-source ~/AppData/Local/nvim/plugins/floaterm.vim
-source ~/AppData/Local/nvim/plugins/airline.vim
-source ~/AppData/Local/nvim/plugins/vim-signature.vim
-source ~/AppData/Local/nvim/plugins/neogit.vim
-source ~/AppData/Local/nvim/plugins/fzf.vim
-source ~/AppData/Local/nvim/plugins/treesitter.vim
-source ~/AppData/Local/nvim/plugins/markdown.vim
-source ~/AppData/Local/nvim/plugins/autsession.vim
 
-source ~/AppData/Local/nvim/plugins/omnisharp.vim
-source ~/AppData/Local/nvim/plugins/coc.vim
-source ~/AppData/Local/nvim/plugins/auto-pairs.vim
+"FILE NAVIGATION
+source ~/AppData/Local/nvim/plugins/fern.vim "directory navigation with optional drawer
+source ~/AppData/Local/nvim/plugins/fzf.vim "fuzzy search
+"source ~/AppData/Local/nvim/plugins/nerdfont.vim 
+
+
+
+source ~/AppData/Local/nvim/plugins/floaterm.vim "floating terminal
+source ~/AppData/Local/nvim/plugins/airline.vim "informational headers and footers
+source ~/AppData/Local/nvim/plugins/vim-signature.vim "display and navigate marks
+source ~/AppData/Local/nvim/plugins/neogit.vim "emacs style git commands
+source ~/AppData/Local/nvim/plugins/treesitter.vim "syntax highlighting and folding, chosen over polyglot
+source ~/AppData/Local/nvim/plugins/markdown.vim "provides live markdown preview
+source ~/AppData/Local/nvim/plugins/autsession.vim "session manager
+
+source ~/AppData/Local/nvim/plugins/omnisharp.vim "for c#
+source ~/AppData/Local/nvim/plugins/coc.vim "code completion and syntax + linter
+source ~/AppData/Local/nvim/plugins/auto-pairs.vim "bracket completion
 
 if exists('g:vscode')
 	source ~/AppData/Local/nvim/plugins/easymotionvscode.vim
