@@ -105,7 +105,13 @@ nmap <esc><esc> <cmd>nohlsearch<cr>
 "xnoremap p pgv"@=v:register.'y'<cr>
 xnoremap p pgvy
 
-nmap <leader>l ::CocCommand eslint.executeAutofix<cr>
+"nmap <leader>l ::CocCommand eslint.executeAutofix<cr>
+"nmap <leader>l :call CocActionAsync('format')<cr>
+nmap <leader>l :ALEFix<cr>
+
+
+"map gd :ALEGoToDefinition<CR>
+"map gr :ALEFindReferences<CR>
 
 " vscode custom keys
 if exists('g:vscode')
@@ -136,11 +142,17 @@ source ~/AppData/Local/nvim/plugins/airline.vim "informational headers and foote
 source ~/AppData/Local/nvim/plugins/vim-signature.vim "display and navigate marks
 source ~/AppData/Local/nvim/plugins/neogit.vim "emacs style git commands
 source ~/AppData/Local/nvim/plugins/treesitter.vim "syntax highlighting and folding, chosen over polyglot
+source ~/AppData/Local/nvim/plugins/anyfold.vim "folding
 source ~/AppData/Local/nvim/plugins/markdown.vim "provides live markdown preview
 source ~/AppData/Local/nvim/plugins/autsession.vim "session manager
 
 source ~/AppData/Local/nvim/plugins/omnisharp.vim "for c#
-source ~/AppData/Local/nvim/plugins/coc.vim "code completion and syntax + linter
+"source ~/AppData/Local/nvim/plugins/coc.vim "code completion and syntax + linter
+"source ~/AppData/Local/nvim/plugins/coc-volar.vim
+"ale and deoplete are much lighter than coc (100mb instead of 1gb+)
+source ~/AppData/Local/nvim/plugins/ale.vim "use instead of coc
+source ~/AppData/Local/nvim/plugins/deoplete.vim "autocomplete instead of coc
+"source ~/AppData/Local/nvim/plugins/nvim-lspconfig.vim "language server
 source ~/AppData/Local/nvim/plugins/auto-pairs.vim "bracket completion
 
 if exists('g:vscode')
