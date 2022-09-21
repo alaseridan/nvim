@@ -3,7 +3,7 @@ Plug 'pseewald/vim-anyfold'
 filetype plugin indent on " required
 syntax on                 " required
 
-autocmd Filetype * AnyFoldActivate               " activate for all filetypes
+" autocmd Filetype * AnyFoldActivate               " activate for all filetypes
 " or
 " autocmd Filetype <your-filetype> AnyFoldActivate " activate for a specific
 " filetype

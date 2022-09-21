@@ -2,9 +2,12 @@
 "https://github.com/nvim-treesitter/nvim-treesitter/actions/workflows/check-query-files-and-compilation.yml
 "to ~/AppData/Local/nvim/plugged/nvim-treesitter/parser
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'windwp/nvim-ts-autotag'
 
-set foldmethod=expr
-set foldexpr=nvim_treesitter#foldexpr()
+let &foldmethod='indent'
+let &foldexpr='0'
+"set foldmethod=expr
+"set foldexpr=nvim_treesitter#foldexpr()
 set foldlevelstart=99 "do not fold everything on start
 
 function TreeSitterSetup()
@@ -12,7 +15,7 @@ lua <<EOF
 require 'nvim-treesitter.install'.compilers = { "clang", "gcc" }
 require'nvim-treesitter.configs'.setup {
   -- One of "all", "maintained" (parsers with maintainers), or a list of languages
-  ensure_installed = "maintained",
+  -- ensure_installed = "maintained",
 
   -- Install languages synchronously (only applied to `ensure_installed`)
   sync_install = false,
@@ -33,6 +36,9 @@ require'nvim-treesitter.configs'.setup {
     -- Instead of true it can also be a list of languages
     additional_vim_regex_highlighting = false,
   },
+  autotag = {
+    enable = true
+  }
 }
 EOF
 endfunction

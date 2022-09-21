@@ -33,4 +33,6 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline#extensions#tabline#buffer_nr_show = 1
 
+let g:airline#extensions#obsession#enabled = 1
+
 set noshowmode

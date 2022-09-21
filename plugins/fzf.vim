@@ -8,3 +8,4 @@ nnoremap <leader>fh <cmd>Helptags<cr>
 nnoremap <leader>fm <cmd>Marks<cr>
 
 let g:fzf_preview_window = ['up:40%:hidden', 'ctrl-/']
+let g:airline#extensions#branch#enabled = 0
