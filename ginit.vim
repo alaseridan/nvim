@@ -5,7 +5,8 @@ set mouse=a
 if exists(':GuiFont')
     " Use GuiFont! to ignore font errors
     "GuiFont Source\ Code\ Pro\ for\ PowerLine:h10:b
-    GuiFont! DejaVu\ Sans\ Mono\ for\ PowerLine:h10:b:i
+    "GuiFont! DejaVu\ Sans\ Mono\ for\ PowerLine:h10:b:i
+    GuiFont! Cascadia\ Code\ PL:h10:b
 endif
 
 " Disable GUI Tabline
